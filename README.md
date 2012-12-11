@@ -1,7 +1,7 @@
 Pack 'n Stack [![Build Status](https://secure.travis-ci.org/CamShaft/pack-n-stack.png?branch=master)](https://travis-ci.org/CamShaft/pack-n-stack)
 =============
 
-Distributable and configurable connect stacks
+Distributable and configurable middleware stacks
 
 Check out the [examples](https://github.com/CamShaft/pack-n-stack/tree/master/examples)!
 
@@ -11,16 +11,17 @@ Why
 
 Because configuring a default stack for many apps is hard. At the same time we need to allow configuration if necessary.
 
-Pack 'n Stack allows an organization to setup default stacks for different types of applications and gives the freedom to applications to modify those stacks based on the app's needs.
+[Pack 'n Stack](https://github.com/CamShaft/pack-n-stack) allows an organization to setup default stacks for different types of applications and gives the freedom to applications to modify those stacks based on the app's needs.
 
 
 API
 ---
 
+### .use(handle)
 ### .use(route, handle)
 ### .use(route, name, handle)
 
-Works similar to `connect.use` except it takes a `name` parameter for identifying middleware. If a `name` is not passed, it defaults to `handle.name`. Either must be present or an exception will be thrown.
+Works similar to [`connect.use`](https://github.com/senchalabs/connect) except it takes a `name` parameter for identifying middleware. If a `name` is not passed, it defaults to `handle.name`. Either must be present or an exception will be thrown.
 
 ### .useBefore(name, handle)
 ### .useBefore(name, route, handle)
