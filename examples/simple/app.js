@@ -2,7 +2,7 @@
 var connect = require("connect")
   , pack = require("./stack")();
 
-app = connect();
+var app = connect();
 
 // Insert some custom middleware
 pack.useBefore('favicon', connect.logger("dev"));

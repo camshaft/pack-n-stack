@@ -2,7 +2,7 @@
 var express = require("express")
   , stack = require("./stack");
 
-app = express();
+var app = express();
 
 // Initialize the pack
 var pack = stack({

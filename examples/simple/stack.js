@@ -1,6 +1,6 @@
 
 var stack = require("../../")
-    connect = require("connect");
+  , connect = require("connect");
 
 module.exports = function(config) {
   if (!config) config = {};

@@ -1,6 +1,6 @@
 
 var stack = require("../../")
-    express = require("express");
+  , express = require("express");
 
 module.exports = function(config) {
   if (!config) config = {};
