@@ -3,6 +3,8 @@ Pack 'n Stack [![Build Status](https://secure.travis-ci.org/CamShaft/pack-n-stac
 
 Distributable and configurable connect stacks
 
+Check out the [examples](https://github.com/CamShaft/pack-n-stack/tree/master/examples)!
+
 
 Why
 ---
@@ -11,7 +13,6 @@ Because configuring a default stack for many apps is hard. At the same time we n
 
 Pack 'n Stack allows an organization to setup default stacks for different types of applications and gives the freedom to applications to modify those stacks based on the app's needs.
 
-Check out the [examples](https://github.com/CamShaft/pack-n-stack/tree/master/examples)!
 
 API
 ---
@@ -51,44 +52,28 @@ Swap middleware functions by name
 Find index of middleware function by `name`
 
 
-Example
+License 
 -------
 
-```js
-// my-stack.js
+(The MIT License)
 
-var stack = require("pack-n-stack")
-    connect = require("connect");
+Copyright (c) 2012 Cameron Bytheway &lt;cameron@nujii.com&gt;
 
-module.exports = function(config) {
-  if (!config) config = {};
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
-  // Create a pack
-  var pack = stack();
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
 
-  // Add some default middleware
-  pack.use(connect.favicon(config.favicon));
-  pack.use(connect.directory(config.static || __dirname));
-
-  // Return the pack
-  return pack;
-};
-```
-
-```js
-// app.js
-var connect = require("connect")
-  , pack = require("my-stack")();
-
-app = connect();
-
-// Insert some custom middleware
-pack.useBefore('favicon', connect.logger("dev"));
-
-// Use the pack
-app.use(pack);
-
-var port = process.env.PORT || 3000;
-console.log("Process listening on port "+port);
-app.listen(port);
-```
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
