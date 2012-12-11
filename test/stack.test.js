@@ -1,4 +1,5 @@
 var stack = require("../")
+  , http = require("http")
   , should = require("should")
   , request = require("supertest")
   , async = require("async")
@@ -65,7 +66,18 @@ describe("stack", function() {
     it("should complain about duplicate 'middleware' names", function() {
       pack.use(first);
       (function() { pack.use(first); }).should.throw();
-    })
+    });
+    it("should 'use' an http server", function() {
+      pack.use("/", "http-server", http.createServer());
+      pack.count.should.equal(1);
+    });
+    it("should 'use' a sub apps", function(done) {
+      pack.use("/subapp", "subapp", connect());
+      pack.count.should.equal(1);
+      request(app)
+        .get("/subapp")
+        .end(done);
+    });
   });
 
   describe(".use(route, middleware)", function() {
@@ -111,6 +123,15 @@ describe("stack", function() {
       pack.indexOf('second').should.equal(1);
       pack.indexOf('third').should.equal(2);
     });
+    it("should throw an exception trying to insert duplicate middleware", function() {
+      pack.use(first);
+      pack.use(third);
+      (function() { pack.useBefore('third', first); }).should.throw();
+    });
+    it("should throw an exception trying to insert middleware before middleware that doesn't exist", function() {
+      pack.use(first);
+      (function() { pack.useBefore('third', second); }).should.throw();
+    });
   });
 
   describe(".useBefore(name, route, middleware)", function() {
@@ -155,6 +176,15 @@ describe("stack", function() {
       pack.indexOf('first').should.equal(0);
       pack.indexOf('second').should.equal(1);
       pack.indexOf('third').should.equal(2);
+    });
+    it("should throw an exception trying to insert duplicate middleware", function() {
+      pack.use(first);
+      pack.use(third);
+      (function() { pack.useAfter('third', first); }).should.throw();
+    });
+    it("should throw an exception trying to insert middleware before middleware that doesn't exist", function() {
+      pack.use(first);
+      (function() { pack.useAfter('third', second); }).should.throw();
     });
   });
 
@@ -207,6 +237,9 @@ describe("stack", function() {
       pack.indexOf('second').should.equal(0);
       pack.count.should.equal(1);
     });
+    it("should throw an exception trying to remove a 'middleware' function that doesn't exist", function() {
+      (function() { pack.remove("doesn't exist") }).should.throw();
+    });
   });
 
   describe(".replace(name, middleware)", function() {
@@ -217,6 +250,9 @@ describe("stack", function() {
       pack.count.should.equal(2);
       pack.indexOf('second').should.equal(-1);
       pack.indexOf('third').should.equal(1);
+    });
+    it("should throw an exception trying to replace middleware that doesn't exist", function() {
+      (function() { pack.replace('third', second); }).should.throw();
     });
   });
 
@@ -232,6 +268,22 @@ describe("stack", function() {
       pack.count.should.equal(2);
       pack.indexOf('second').should.equal(1);
       pack.indexOf('first').should.equal(0);
+    });
+    it("should throw an exception trying to swap middleware that doesn't exist", function() {
+      pack.use(first);
+      (function() { pack.swap('first', 'second'); }).should.throw();
+      (function() { pack.swap('third', 'first'); }).should.throw();
+    });
+  });
+
+  describe(".indexOf()", function() {
+    it("should find the middleware by name", function() {
+      pack.use(first);
+      pack.indexOf("first").should.equal(0);
+    });
+    it("should find the middleware by reference", function() {
+      pack.use(first);
+      pack.indexOf(first).should.equal(0);
     });
   });
 
