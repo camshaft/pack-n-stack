@@ -17,7 +17,7 @@ module.exports = function(config) {
   if(config.router) pack.use(config.router);
 
   // Public Dir
-  app.use(express.static(config.public || path.join(__dirname, 'public')));
+  app.use(express.static(config.public || __dirname));
 
   // Error handling
   pack.use(function notFound(req, res) {

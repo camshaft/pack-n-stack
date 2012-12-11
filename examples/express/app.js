@@ -23,4 +23,5 @@ app.get("/", function(req, res, next) {
 // Start the server
 var port = process.env.PORT || 3000;
 console.log("Process listening on port "+port);
+console.log("Using middleware:\n\t[" + pack.list().join(",\n\t ") + "]");
 app.listen(port);
