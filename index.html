@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pack-n-stack by CamShaft</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pack-n-stack</h1>
+        <p>Distributable and configurable middleware stacks</p>
+
+        <p class="view"><a href="https://github.com/CamShaft/pack-n-stack">View the Project on GitHub <small>CamShaft/pack-n-stack</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/CamShaft/pack-n-stack/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/CamShaft/pack-n-stack/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/CamShaft/pack-n-stack">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Pack 'n Stack <a href="https://travis-ci.org/CamShaft/pack-n-stack"><img src="https://secure.travis-ci.org/CamShaft/pack-n-stack.png?branch=master" alt="Build Status"></a>
+</h1>
+
+<p>Distributable and configurable connect stacks</p>
+
+<p>Check out the <a href="https://github.com/CamShaft/pack-n-stack/tree/master/examples">examples</a>!</p>
+
+<h2>Why</h2>
+
+<p>Because configuring a default stack for many apps is hard. At the same time we need to allow configuration if necessary.</p>
+
+<p><a href="https://github.com/CamShaft/pack-n-stack">Pack 'n Stack</a> allows an organization to setup default stacks for different types of applications and gives the freedom to applications to modify those stacks based on the app's needs.</p>
+
+<h2>API</h2>
+
+<h3>.use(route, handle)</h3>
+
+<h3>.use(route, name, handle)</h3>
+
+<p>Works similar to <code>connect.use</code> except it takes a <code>name</code> parameter for identifying middleware. If a <code>name</code> is not passed, it defaults to <code>handle.name</code>. Either must be present or an exception will be thrown.</p>
+
+<h3>.useBefore(name, handle)</h3>
+
+<h3>.useBefore(name, route, handle)</h3>
+
+<h3>.useBefore(name, route, handleName, handle)</h3>
+
+<p>Inserts <code>handle</code> before the middleware named <code>name</code></p>
+
+<h3>.useAfter(name, handle)</h3>
+
+<h3>.useAfter(name, route, handle)</h3>
+
+<h3>.useAfter(name, route, handleName, handle)</h3>
+
+<p>Inserts <code>handle</code> after the middleware named <code>name</code></p>
+
+<h3>.remove(name)</h3>
+
+<p>Removes the middleware named <code>name</code></p>
+
+<h3>.replace(name, handle)</h3>
+
+<h3>.replace(name, handleName, handle)</h3>
+
+<p>Replaces the middleware named <code>name</code> by <code>handleName</code> and <code>handle</code></p>
+
+<h3>.swap(first, second)</h3>
+
+<p>Swap middleware functions by name</p>
+
+<h3>.indexOf(name)</h3>
+
+<p>Find index of middleware function by <code>name</code></p>
+
+<h2>License </h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2012 Cameron Bytheway &lt;<a href="mailto:cameron@nujii.com">cameron@nujii.com</a>&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/CamShaft">CamShaft</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
