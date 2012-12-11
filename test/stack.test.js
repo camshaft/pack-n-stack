@@ -235,4 +235,16 @@ describe("stack", function() {
     });
   });
 
+  describe(".list()", function() {
+    it("should list the middleware in use and in order", function() {
+      pack.use(first);
+      pack.use(second);
+      pack.use(third);
+      var list = pack.list();
+      list[0].should.equal("first");
+      list[1].should.equal("second");
+      list[2].should.equal("third");
+    });
+  });
+
 });
