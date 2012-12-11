@@ -1,0 +1,29 @@
+{
+  "name": "pack-n-stack",
+  "version": "0.0.1",
+  "description": "Distributable and configurable connect stacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fs-webdev/pack-n-stack.git"
+  },
+  "keywords": [
+    "connect",
+    "stack",
+    "middleware"
+  ],
+  "author": "Cameron Bytheway",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "2.7.1"
+  },
+  "devDependencies": {
+    "async": "~0.1.22",
+    "mocha": "~1.7.4",
+    "should": "~1.2.1",
+    "supertest": "~0.5.1"
+  }
+}
