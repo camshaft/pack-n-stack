@@ -13,9 +13,11 @@
   "keywords": [
     "connect",
     "stack",
-    "middleware"
+    "middleware",
+    "express",
+    "app"
   ],
-  "author": "Cameron Bytheway",
+  "author": "Cameron Bytheway <cameron@nujii.com>",
   "license": "MIT",
   "dependencies": {
     "connect": "2.7.1"
