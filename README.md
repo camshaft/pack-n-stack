@@ -16,14 +16,19 @@ Check out the [examples](https://github.com/CamShaft/pack-n-stack/tree/master/ex
 API
 ---
 
+### .use(route, handle)
 ### .use(route, name, handle)
 
-Works similar to `connect.use` except it takes a `name` parameter for identifying middleware. If a name is not passed, it defaults to the name of the function. Either must be present.
+Works similar to `connect.use` except it takes a `name` parameter for identifying middleware. If a `name` is not passed, it defaults to `handle.name`. Either must be present or an exception will be thrown.
 
+### .useBefore(name, handle)
+### .useBefore(name, route, handle)
 ### .useBefore(name, route, handleName, handle)
 
 Inserts `handle` before the middleware named `name`
 
+### .useAfter(name, handle)
+### .useAfter(name, route, handle)
 ### .useAfter(name, route, handleName, handle)
 
 Inserts `handle` after the middleware named `name`
@@ -32,9 +37,10 @@ Inserts `handle` after the middleware named `name`
 
 Removes the middleware named `name`
 
+### .replace(name, handle)
 ### .replace(name, handleName, handle)
 
-Replaces the middleware named `name` by handleName and handle
+Replaces the middleware named `name` by `handleName` and `handle`
 
 ### .swap(first, second)
 
@@ -42,7 +48,7 @@ Swap middleware functions by name
 
 ### .indexOf(name)
 
-Find index of middleware function by name
+Find index of middleware function by `name`
 
 
 Example
