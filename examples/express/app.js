@@ -15,6 +15,7 @@ pack.useBefore('favicon', express.logger("dev"));
 // Use the pack
 app.use(pack);
 
+// Routes
 app.get("/", function(req, res, next) {
   res.send("<h1>Hello Pack 'n Stack</h1><p>Love, Express</p>");
 });
