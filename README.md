@@ -11,7 +11,7 @@ Because configuring a default stack for many apps is hard. At the same time we n
 
 Pack 'n Stack allows an organization to setup default stacks for different types of applications and gives the freedom to applications to modify those stacks based on the app's needs.
 
-Check out the [examples](examples)!
+Check out the [examples](./examples)!
 
 API
 ---
