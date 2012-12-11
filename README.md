@@ -1,4 +1,4 @@
-Pack 'n Stack
+Pack 'n Stack [![Build Status](https://secure.travis-ci.org/CamShaft/pack-n-stack.png?branch=master)](https://travis-ci.org/CamShaft/pack-n-stack)
 =============
 
 Distributable and configurable connect stacks
