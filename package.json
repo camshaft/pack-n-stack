@@ -1,7 +1,7 @@
 {
   "name": "pack-n-stack",
   "version": "0.0.1",
-  "description": "Distributable and configurable connect stacks",
+  "description": "Distributable and configurable middleware stacks",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec"
