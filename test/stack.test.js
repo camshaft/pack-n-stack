@@ -14,9 +14,7 @@ describe("stack", function() {
   function third(req, res, next) {next()};
 
   beforeEach(function() {
-    pack = stack();
-    app = connect();
-    app.use(pack);
+    app = pack = stack(connect());
   });
 
   describe(".use(middleware)", function() {

@@ -1,6 +1,6 @@
 {
   "name": "pack-n-stack",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Distributable and configurable middleware stacks",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,9 @@
   "author": "Cameron Bytheway <cameron@nujii.com>",
   "license": "MIT",
   "dependencies": {
-    "connect": "~2.7.1"
   },
   "devDependencies": {
+    "connect": "~2.7.1",
     "async": "~0.1.22",
     "mocha": "~1.7.4",
     "should": "~1.2.1",
