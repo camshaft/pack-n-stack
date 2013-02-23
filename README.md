@@ -17,21 +17,15 @@ Because configuring a default stack for many apps is hard. At the same time we n
 API
 ---
 
-### .use(handle)
-### .use(route, handle)
-### .use(route, name, handle)
+### .use([route], [name], handle)
 
 Works similar to [`connect.use`](https://github.com/senchalabs/connect) except it takes a `name` parameter for identifying middleware. If a `name` is not passed, it defaults to `handle.name`. Either must be present or an exception will be thrown.
 
-### .useBefore(name, handle)
-### .useBefore(name, route, handle)
-### .useBefore(name, route, handleName, handle)
+### .useBefore(name, [route], [handleName], handle)
 
 Inserts `handle` before the middleware named `name`
 
-### .useAfter(name, handle)
-### .useAfter(name, route, handle)
-### .useAfter(name, route, handleName, handle)
+### .useAfter(name, [route], [handleName], handle)
 
 Inserts `handle` after the middleware named `name`
 
@@ -39,8 +33,7 @@ Inserts `handle` after the middleware named `name`
 
 Removes the middleware named `name`
 
-### .replace(name, handle)
-### .replace(name, handleName, handle)
+### .replace(name, [handleName], handle)
 
 Replaces the middleware named `name` by `handleName` and `handle`
 
