@@ -41,6 +41,10 @@ Replaces the middleware named `name` by `handleName` and `handle`
 
 Swap middleware functions by name
 
+### .moveBefore(first, second)
+
+Move a middleware before another
+
 ### .indexOf(name)
 
 Find index of middleware function by `name`
